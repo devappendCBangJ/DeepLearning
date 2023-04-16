@@ -1,0 +1,161 @@
+● Docker
+	0. docker 사용 순서
+		1) docker for windows 다운 및 가이드대로 추가 설치
+		2) 명령 프롬프트 실행
+		3) docker run hello-world 입력
+
+● Machine Learning
+	0. 머신러닝 튜토리얼
+		- Teachable Machine : GUI 형태 딥러닝
+		- https://tutorials.pytorch.kr/beginner/blitz/tensor_tutorial.html
+		- https://wikidocs.net/59427
+	1. 머신러닝 사용 순서
+		1) 문제 인식
+			- https://docs.google.com/spreadsheets/d/1mdCb-xRYBAsAOeiC7miyQgcMqVzCpg_67OmfdGRvVAY/edit
+		2) 데이터 수집 및 전처리
+		3) 데이터 학습
+			(1) 표
+				열(column) = 특성(feature) = 속성(attribute) = 변수(variable) = field = x
+				행(instance) = 관측치(observed value) = 기록(record) = 사례(example) = 경우(case) = sample
+			(2) 변수
+				[1] 상관관계 : 변수 사이 관련성
+					- 인과관계 : 변수 사이 원인<->결과
+						독립변수 = 원인
+						종속변수 = 결과
+			(3) 데이터 분류
+				1] 전체 데이터 분류 : 훈련 데이터 + 테스트 데이터
+				2] 전체 데이터 분류2 : 훈련 데이터 + 검증 데이터 + 테스트 데이터
+					- 검증 : 모델 성능 평가x. 모델 성능 조정o by 하이퍼파라미터 튜닝
+					[1] 초매개변수(하이퍼파라미터) : 사용자가 정하는 변수 
+						ex. 경사 하강법에서 학습률
+						ex. 딥러닝에서 은닉층 수, 뉴런 수, 드롭아웃 비율
+					[2] 매개변수 : 모델 학습 과정에서 얻어지는 변수 
+						ex. 가중치 W, 편향 b
+			(4) 머신러닝 기계학습
+
+………………………………………………………………………………………………………………………………………………………………………………………………………………
+
+	4) 머신러닝 기계학습
+		(1) 지도 학습 : 목적(레이블)o 배움 >> 정답 추출 문제
+     			1] 회귀(regression) : 정답이 숫자. 독립변수, 종속변수 존재
+				[1] 선형 회귀(Linear Regression)
+					- 특징 : 선형적 연속된 값 판단
+					ex. 시계열 데이터 이용한 주가 예측, 생산량 예측, 지수 예측 등
+     			2] 분류(classification) : 정답이 문자. 독립변수, 종속변수 존재
+				[1] 로지스틱 회귀(Logistic Regression)
+
+				[1] 이진 분류(Binary Classification)
+					- 특징 : 선택(2개 선택지 중 1개로 판단)
+				[2] 다중 클래스 분류(Multi-Class Classification)
+					- 특징 : 선택(3개 이상 선택지 중 1개로 판단)
+				[3] 다중 레이블 분류(Multi-Lable Classification)
+		(2) 비지도 학습 : 목적x 배움 >> 의미, 관계 추론 문제
+			1] 군집화(clustering) : 비슷한 행을 그룹핑. 독립변수, 종속변수 존재 x
+			2] 연관(association rule learning) : 비슷한 열을 그룹핑. 독립변수, 종속변수 존재 x
+			3] 변환
+		(3) 강화 학습 : 경험 >> 정답 추출 문제
+			- 상vs벌 by 점수부여
+			- 목적 : 환경(environment) 속에서 상태(state)에 따라서 더 많은 보상(reward)을 받을 수 있는 						행동(action)을 에이전트(agent)가 할 수 있도록 하는 정책(policy)을 만드는 것.
+
+………………………………………………………………………………………………………………………………………………………………………………………………………………
+
+			(5) 문제점 및 해결
+				1] 문제점 - 적합
+					[0] 적합 : 훈련 데이터를 학습하는 과정
+					[1] 과적합(Overfitting) : 훈련 데이터의 지나친 학습
+					[2] 과소적합(Underfitting) : 훈련 데이터의 부족한 학습
+				2] 해결 - 적합
+					[1] 드롭아웃(Dropout)
+					[2] 조기종료(Early Stopping)
+
+				1] 문제점 - 정확도
+					[1] 정확도(Accuracy) = 맞춘 문제수 / 전체 문제수
+						- 오답정리 불가능. 점수만 알 수 있다
+				2] 해결 - 정확도
+					[1] 혼동행렬(Confusion Matrix)
+						- 오답정리 가능
+						[[1]] 정밀도(Precision) = TP/(TP + FP)
+							- 진실이라고 대답한 케이스에 대한 TP 비율
+						[[2]] 재현률(Recall) = TP/(TP + FN)
+							- 실제 진실인 데이터에 대한 TP 비율
+						ex. 이진분류
+							True : 정답
+							False : 오답
+
+							Positive : 진실이라 예측
+							Negative : 거짓이라 예측
+
+							TP(True Positive) : 진실이라 예측 + 정답
+							TN(True Negative) : 거짓이라 예측 + 정답
+							FP(False Positive) : 진실이라 예측 + 오답
+							FN(False Negative) : 거짓이라 예측 + 오답
+		4) 모델 생성(데이터 사이 관계 도출 및 예측)
+		5) 테스트 및 피드백
+ 
+	2. 머신러닝 기법
+		1) 퍼셉트론(Perceptron) : 인공 뉴런의 종류 중 하나
+			- 특징 : 초기 인공 신경망 모델
+			- 활성화 함수 : 계단함수
+			- 입력값 : 각각의 x
+			- 과정 : 각각의 가중치 W 곱해짐
+			- 총정리 & 결과 : sigma(Wx + b) >= 임계치(threshold) >> 출력 y=1
+				sigma(Wx + b) < 임계치(threshold) >> 출력 y=0
+			1] 단층 퍼셉트론(Single-Layer Perceptron)
+				- 특징 : '직선 1개'로 '2개 영역'을 나눔
+				- 특징 : 입력층, 출력층 존재
+				[1] AND 게이트
+					// Jupyter Perceptron 참조
+				[2] NAND 게이트
+					// Jupyter Perceptron 참조
+				[3] OR 게이트
+					// Jupyter Perceptron 참조
+				[4] XOR 게이트
+					- '직선 1개'로 '2개 영역'을 나눌 수 없다
+					// Jupyter Perceptron 참조
+			2] 다층 퍼셉트론(Multi-Layer Perceptron = MLP)
+				- 특징 : '직선 1개로' '2개 영역'을 나누는 단층 퍼셉트론 층 여러개
+				- 특징 : 입력층과 출력층 사이 은닉층(Hidden Layer) 여러개 존재
+				- 심층 신경망(DNN) : 은닉층(Hidden Layer)가 2개 이상인 신경망
+				- 딥러닝(Deep Learning) : 심층 신경망(DNN)을 학습시키는 것
+
+				[1] 순전파(Forward Propagation)
+					- 특징 : 입력층 >> 출력층
+					- 입력층 출력 : 기존 입력 x
+					- 은닉층 입력 : 각각 기존 입력 x * 각각 가중치 W = z
+					- 은닉층 출력 : 은닉층 입력의 시그모이드 함수값 h
+					- 출력층 입력 : 각각 은닉층 입력의 시그모이드 함수값 h * 각각 가중치 W = z
+					- 출력층 출력 : 최종 출력 = 예측값 o
+					- 오차(E_total) 계산 : 손실함수(LossFunction)로 평균제곱오차(MSE) 이용
+				[2] 역전파 1단계(BackPropagation Propagation)
+					- 특징 : 출력층 >> 입력층. 가중치 업데이트
+					- 가중치 업데이트 : 
+						step1. 오차(E_total)를 각각의 W에 대해 미분
+						= 현재 은닉층 출력값 o에 대한 평균제곱오차값 E_total 미분 
+						* 현재 은닉층 입력값 z에 대한 현재 은닉층 출력값 o 미분
+						* 각각의 가중치 W에 대한 현재 은닉층 입력값 z 미분(이전 은닉층의 출력값)
+						= dE_total/dW_5 = (dE_total/do_1) * (do_1/dz_3) * (dz_3/dW_5)
+						= -(target_o_1 - output_o_1) * o_1(1 - o_1) * h_1
+						step2. 가중치 업데이트 by 경사 하강법
+						W_5+ = W_5 - (learning_rate)*(dE_total/dW_5)
+				[2] 역전파 2단계(BackPropagation Propagation)
+					- 특징 : 출력층 >> 입력층. 가중치 업데이트
+					- 가중치 업데이트 : 
+						step1. 오차(E_total)를 각각의 W에 대해 미분
+						= 현재 은닉층 출력값 h에 대한 평균제곱오차값 E_total 미분 
+						* 현재 은닉층 입력값 z에 대한 현재 은닉층 출력값 h 미분
+						* 각각의 가중치 W에 대한 현재 은닉층 입력값 z 미분(이전 은닉층의 출력값)
+						= dE_total/dW_1 = (dE_total/dh_1) * (dh_1/dz_1) * (dz_1/dW_1)
+						= dE_total/dW_1 = {(dE_o_1/dh_1)+(dE_o_2/dh_1)} * (dh_1/dz_1) * (dz_1/dW_1)
+						= dE_total/dW_1 = {(dE_o_1/do_1)*(do_1/dz_3)*(dz_3/dh_1)+
+							(dE_o_2/do_2)*(do_2/dz_4)*(dz_4/dh_1)} * (dh_1/dz_1) * (dz_1/dW_1)
+						= dE_total/dW_1 = {(-(target_o_1 - output_o_1) * o_1(1 - o_1) * W_5)+
+							((-(target_o_2 - output_o_2) * o_2(1 - o_2) * W_7)} 
+							* (dh_1/dz_1) * (dz_1/dW_1)
+						step2. 가중치 업데이트 by 경사 하강법
+						W_1+ = W_1 - (learning_rate)*(dE_total/dW_1)
+				- 순전파, 역전파 목적 : 오차를 최소화하는 가중치를 찾기 위해 순전파와 역전파 반복		
+	
+	3. 머신러닝 분야
+		0) 사물인터넷 = 코딩 + 네트워크 + 전자공학 + 기계공학
+		1) 데이터 과학 : 데이터 자체 - 데이터 제작, 이용
+		2) 데이터 공학 : 데이터 위한 도구 - 데이터를 다루는 도구 제작
